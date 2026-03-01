@@ -1,0 +1,73 @@
+#vve:object/doc.mcfo
+
+# object临时对象
+_this:{
+	center:{
+		<x,int,1w>, <y,int,1w>, <z,int,1w>
+	},
+	velocity:{
+		<vx,int,1w>, <vy,int,1w>, <vz,int,1w>
+	},
+	angular_vec:{
+		<angular_x,int,1w>,
+		<angular_y,int,1w>,
+		<angular_z,int,1w>
+	},
+	angular_len:<angular_len,int,1w>,
+	uvw_coord:{
+		ivec:{<ivec_x,int,1w>, <ivec_y,int,1w>, <ivec_z,int,1w>},
+		jvec:{<jvec_x,int,1w>, <jvec_y,int,1w>, <jvec_z,int,1w>},
+		kvec:{<kvec_x,int,1w>, <kvec_y,int,1w>, <kvec_z,int,1w>}
+	},
+	quaternion:{
+		xyzw:{
+			<quat_x,int,1w>,
+			<quat_y,int,1w>,
+			<quat_z,int,1w>,
+			<quat_w,int,1w>
+		},
+		start_xyzw:{
+			<quat_start_x,int,1w>,
+			<quat_start_y,int,1w>,
+			<quat_start_z,int,1w>,
+			<quat_start_w,int,1w>
+		},
+		orth_xyzw:{
+			<quat_orth_x,int,1w>,
+			<quat_orth_y,int,1w>,
+			<quat_orth_z,int,1w>,
+			<quat_orth_w,int,1w>
+		},
+		phi:<quat_phi,int,1w>
+	}
+}
+
+# 接收器临时对象
+receiver:{
+	shift_receiver:{
+		shift_response:<shift_receiver_response,int>,
+		shift_vec:{
+			<shift_receiver_x,int,1w>,
+			<shift_receiver_y,int,1w>,
+			<shift_receiver_z,int,1w>
+		}
+	},
+	impulse_receiver:{
+		impulse_response:<impulse_receiver_response,int>,
+		impulse_center:{
+			<impulse_receiver_x,int,1w>,
+			<impulse_receiver_y,int,1w>,
+			<impulse_receiver_z,int,1w>
+		},
+		impulse_sum:{
+			<impulse_receiver_sx,int,1w>,
+			<impulse_receiver_sy,int,1w>,
+			<impulse_receiver_sz,int,1w>
+		},
+		impulse_vec:{
+			<impulse_receiver_fx,int,1w>,
+			<impulse_receiver_fy,int,1w>,
+			<impulse_receiver_fz,int,1w>
+		}
+	}
+}

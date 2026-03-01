@@ -1,0 +1,10 @@
+#vve:shift/doc.mcfo
+
+# shift临时对象
+_this:{
+	vector:{
+		<shift_x,int,1w>,
+		<shift_y,int,1w>,
+		<shift_z,int,1w>
+	}
+}

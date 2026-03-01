@@ -1,0 +1,11 @@
+#vve:grab_layer/doc.mcfo
+
+# grab_layer临时对象
+_this:{
+	grab_depth:<grab_depth,int,1w>,
+	norm_vec:{
+		<nvec_x,int,1w>,
+		<nvec_y,int,1w>,
+		<nvec_z,int,1w>
+	}
+}

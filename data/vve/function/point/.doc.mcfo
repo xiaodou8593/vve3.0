@@ -1,0 +1,11 @@
+#vve:point/doc.mcfo
+
+# point临时对象
+_this:{
+	center:{
+		<x,int,1w>, <y,int,1w>, <z,int,1w>
+	},
+	velocity:{
+		<vx,int,1w>, <vy,int,1w>, <vz,int,1w>
+	}
+}

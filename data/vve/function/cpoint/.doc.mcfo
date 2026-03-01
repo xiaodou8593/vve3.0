@@ -1,0 +1,12 @@
+#vve:cpoint/doc.mcfo
+
+# cpoint临时对象
+_this:{
+	center:{
+		<c_x,int,1w>, <c_y,int,1w>, <c_z,int,1w>
+	},
+	velocity:{
+		<c_vx,int,1w>, <c_vy,int,1w>, <c_vz,int,1w>
+	},
+	mass:<c_mass,int>
+}

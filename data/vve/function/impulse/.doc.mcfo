@@ -1,0 +1,15 @@
+#vve:impulse/doc.mcfo
+
+# impulse临时对象
+_this:{
+	center:{
+		<impulse_x,int,1w>,
+		<impulse_y,int,1w>,
+		<impulse_z,int,1w>
+	},
+	vector:{
+		<impulse_fx,int,1w>,
+		<impulse_fy,int,1w>,
+		<impulse_fz,int,1w>
+	}
+}

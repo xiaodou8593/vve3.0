@@ -1,0 +1,10 @@
+{
+	"values":[
+		"minecraft:short_grass",
+		"minecraft:tall_grass",
+		"minecraft:glass",
+		"#minecraft:air",
+		"#minecraft:buttons",
+		"#minecraft:flowers"
+	]
+}
