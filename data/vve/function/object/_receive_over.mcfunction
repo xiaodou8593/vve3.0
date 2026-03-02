@@ -4,11 +4,13 @@
 # 输出impulse{...}, shift{...}
 
 # 结算位移
+execute if score shift_receiver_response int matches 1 run scoreboard players set shift_response int 1
 scoreboard players operation shift_x int = shift_receiver_x int
 scoreboard players operation shift_y int = shift_receiver_y int
 scoreboard players operation shift_z int = shift_receiver_z int
 
 # 结算冲量
+execute if score impulse_receiver_response int matches 1.. run scoreboard players set impulse_response int 1
 scoreboard players operation impulse_x int = impulse_receiver_sx int
 scoreboard players operation impulse_y int = impulse_receiver_sy int
 scoreboard players operation impulse_z int = impulse_receiver_sz int

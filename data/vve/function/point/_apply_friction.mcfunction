@@ -1,5 +1,5 @@
-#vve:point/_receive_friction
-# 接收摩擦响应
+#vve:point/_apply_friction
+# 应用摩擦响应
 # 输入<friction_response,int,1w>
 
 scoreboard players operation vx int *= friction_response int
