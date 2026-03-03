@@ -1,7 +1,14 @@
 #vve:object/_receive_over
 # 结束响应接收过程
 # 输入receiver{...}
-# 输出impulse{...}, shift{...}
+# 输出{<grab_layer_response,int>,<friction_response,int>,<shift_response,int>,<impulse_response,int>}
+# 输出impulse{...}, shift{...}, friction{...}, grab_layer{...}
+
+# 结算附着层
+scoreboard players operation grab_layer_response int = grab_layer_receiver_response int
+
+# 结算摩擦
+scoreboard players operation friction_response int = friction_receiver_response int
 
 # 结算位移
 execute if score shift_receiver_response int matches 1 run scoreboard players set shift_response int 1

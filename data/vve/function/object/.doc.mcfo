@@ -9,11 +9,11 @@ _this:{
 		<vx,int,1w>, <vy,int,1w>, <vz,int,1w>
 	},
 	angular_vec:{
-		<angular_x,int,1w>,
-		<angular_y,int,1w>,
-		<angular_z,int,1w>
+		<angular_x,int,100w>,
+		<angular_y,int,100w>,
+		<angular_z,int,100w>
 	},
-	angular_len:<angular_len,int,1w>,
+	angular_len:<angular_len,int,100w>,
 	uvw_coord:{
 		ivec:{<ivec_x,int,1w>, <ivec_y,int,1w>, <ivec_z,int,1w>},
 		jvec:{<jvec_x,int,1w>, <jvec_y,int,1w>, <jvec_z,int,1w>},
@@ -44,6 +44,12 @@ _this:{
 
 # 接收器临时对象
 receiver:{
+	grab_layer_receiver:{
+		grab_layer_response:<grab_layer_receiver_response,int>
+	},
+	friction_receiver:{
+		friction_response:<friction_receiver_response,int>
+	},
 	shift_receiver:{
 		shift_response:<shift_receiver_response,int>,
 		shift_vec:{

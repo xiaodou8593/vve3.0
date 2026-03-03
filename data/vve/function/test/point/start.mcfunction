@@ -4,7 +4,7 @@ function vve:_init
 
 # 生成测试程序实体
 tag @e[tag=result] remove result
-summon item_display 193 -55 53 {Tags:["test", "point_test", "result"], CustomName:'{"text":"point_test"}',teleport_duration:1,brightness:{sky:15,block:15}}
+summon item_display 193 -55 53 {Tags:["test", "point_test", "result"], CustomName:{"text":"point_test"},teleport_duration:1,brightness:{sky:15,block:15}}
 item replace entity @e[tag=result,limit=1] container.0 with verdant_froglight
 data modify entity @e[tag=result,limit=1] transformation.scale set value [0.075f,0.075f,0.075f]
 scoreboard players set inp int 2353

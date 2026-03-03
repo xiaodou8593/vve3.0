@@ -9,5 +9,6 @@ function vve:_consts
 
 # 初始化子模块
 function vve:point/init
+function vve:block/init
 function vve:object/init
 function vve:friction/init

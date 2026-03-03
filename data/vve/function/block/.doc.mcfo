@@ -4,7 +4,7 @@
 _this:{
 	a:<a,int,1w>,
 	mass:<mass,int,1>,
-	inertia:<inertia,int,1w>,
+	inertia:<inertia,int,100>,
 	center:{
 		<x,int,1w>, <y,int,1w>, <z,int,1w>
 	},
@@ -12,11 +12,11 @@ _this:{
 		<vx,int,1w>, <vy,int,1w>, <vz,int,1w>
 	},
 	angular_vec:{
-		<angular_x,int,1w>,
-		<angular_y,int,1w>,
-		<angular_z,int,1w>
+		<angular_x,int,100w>,
+		<angular_y,int,100w>,
+		<angular_z,int,100w>
 	},
-	angular_len:<angular_len,int,1w>,
+	angular_len:<angular_len,int,100w>,
 	uvw_coord:{
 		ivec:{<ivec_x,int,1w>, <ivec_y,int,1w>, <ivec_z,int,1w>},
 		jvec:{<jvec_x,int,1w>, <jvec_y,int,1w>, <jvec_z,int,1w>},

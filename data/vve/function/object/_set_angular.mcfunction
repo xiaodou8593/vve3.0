@@ -1,7 +1,7 @@
 #vve:object/_set_angular
 # 设置临时对象的角速度
-# 输入_this:{<angular_x,int,1w>,<angular_y,int,1w>,<angular_z,int,1w>}
-# 输出_this:{<angular_len,int,1w>,quaternion{...}}
+# 输入_this:{<angular_x,int,100w>,<angular_y,int,100w>,<angular_z,int,100w>}
+# 输出_this:{<angular_len,int,100w>,quaternion{...}}
 # 传入世界实体为执行者
 
 # 计算角速度转轴和模长
@@ -29,8 +29,13 @@ execute if score uvec_y int matches ..-1 run scoreboard players operation sstemp
 execute if score uvec_z int matches 1.. run scoreboard players operation sstempd int += uvec_z int
 execute if score uvec_z int matches ..-1 run scoreboard players operation sstempd int -= uvec_z int
 
-scoreboard players operation angular_len int *= 10000 int
+execute store result score sstemp_mod int run scoreboard players operation angular_len int *= 100 int
 scoreboard players operation angular_len int /= sstempd int
+scoreboard players operation sstemp_mod int %= sstempd int
+scoreboard players operation sstemp_mod int *= 100 int
+scoreboard players operation sstemp_mod int /= sstempd int
+scoreboard players operation angular_len int *= 100 int
+scoreboard players operation angular_len int += sstemp_mod int
 
 # 当前姿态设置为旋转初始姿态
 scoreboard players operation quat_start_x int = quat_x int

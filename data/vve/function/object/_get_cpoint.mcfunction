@@ -3,7 +3,7 @@
 # 输入{<u,int,1w>,<v,int,1w>,<w,int,1w>}
 # 输出cpoint:{center:{...},velocity:{...}}
 
-# 局部坐标转相对坐标
+# 局部坐标转世界坐标
 scoreboard players operation c_vx int = ivec_x int
 scoreboard players operation c_vx int *= u int
 scoreboard players operation sstemp int = jvec_x int
@@ -13,7 +13,6 @@ scoreboard players operation sstemp int = kvec_x int
 scoreboard players operation sstemp int *= w int
 scoreboard players operation c_vx int += sstemp int
 scoreboard players operation c_vx int /= 10000 int
-scoreboard players operation c_vx int += x int
 
 scoreboard players operation c_vy int = ivec_y int
 scoreboard players operation c_vy int *= u int
@@ -24,7 +23,6 @@ scoreboard players operation sstemp int = kvec_y int
 scoreboard players operation sstemp int *= w int
 scoreboard players operation c_vy int += sstemp int
 scoreboard players operation c_vy int /= 10000 int
-scoreboard players operation c_vy int += y int
 
 scoreboard players operation c_vz int = ivec_z int
 scoreboard players operation c_vz int *= u int
@@ -35,7 +33,6 @@ scoreboard players operation sstemp int = kvec_z int
 scoreboard players operation sstemp int *= w int
 scoreboard players operation c_vz int += sstemp int
 scoreboard players operation c_vz int /= 10000 int
-scoreboard players operation c_vz int += z int
 
 scoreboard players operation c_x int = c_vx int
 scoreboard players operation c_y int = c_vy int

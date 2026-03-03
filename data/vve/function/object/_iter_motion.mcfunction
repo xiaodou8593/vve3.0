@@ -9,7 +9,7 @@ scoreboard players operation z int += vz int
 
 # 角速度迭代
 # 旋转度数是弧度缩放90/pi
-execute store result entity @s Rotation[0] float -0.00286478897565 run scoreboard players operation quat_phi int += angular_len int
+execute store result entity @s Rotation[0] float -0.0000286478897565 run scoreboard players operation quat_phi int += angular_len int
 scoreboard players operation quat_phi int %= 314159265 int
 execute at @s positioned 0.0 0.0 0.0 rotated ~ 0.0 run tp @s ^ ^ ^1.0
 data modify storage math:io xyz set from entity @s Pos

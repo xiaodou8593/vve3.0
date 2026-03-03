@@ -18,9 +18,15 @@ scoreboard players operation fvec_z int = impulse_fz int
 function math:vec/_cross_fvec
 
 # 改变角速度
-execute store result score angular_x int run scoreboard players operation vec_x int /= inertia int
-execute store result score angular_y int run scoreboard players operation vec_y int /= inertia int
-execute store result score angular_z int run scoreboard players operation vec_z int /= inertia int
+scoreboard players operation vec_x int *= 10000 int
+scoreboard players operation vec_y int *= 10000 int
+scoreboard players operation vec_z int *= 10000 int
+scoreboard players operation vec_x int /= inertia int
+scoreboard players operation vec_y int /= inertia int
+scoreboard players operation vec_z int /= inertia int
+scoreboard players operation angular_x int += vec_x int
+scoreboard players operation angular_y int += vec_y int
+scoreboard players operation angular_z int += vec_z int
 function vve:object/_set_angular
 
 # 改变速度

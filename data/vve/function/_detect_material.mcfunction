@@ -5,6 +5,8 @@
 # 输出介质响应(各模块的临时对象)
 # 传入世界实体为执行者(不保证Pos位于执行位置)
 
+#return run function vve:cpoint/_render_debug
+
 # 各模块响应信号重置
 scoreboard players set shift_response int 0
 scoreboard players set impulse_response int 0
