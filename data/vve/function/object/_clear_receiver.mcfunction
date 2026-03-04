@@ -1,6 +1,8 @@
 #vve:object/_clear_receiver
 # 清空接收器receiver{...}
 
+scoreboard players set bounce_layer_receiver_response int 0
+
 scoreboard players set grab_layer_receiver_response int 0
 
 scoreboard players set friction_receiver_response int 10000

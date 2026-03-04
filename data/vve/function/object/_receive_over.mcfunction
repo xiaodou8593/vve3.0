@@ -2,7 +2,10 @@
 # 结束响应接收过程
 # 输入receiver{...}
 # 输出{<grab_layer_response,int>,<friction_response,int>,<shift_response,int>,<impulse_response,int>}
-# 输出impulse{...}, shift{...}, friction{...}, grab_layer{...}
+# 输出impulse{...}, shift{...}, friction{...}, grab_layer{...}, bounce_layer{...}
+
+# 结算实心层
+scoreboard players operation bounce_layer_response int = bounce_layer_receiver_response int
 
 # 结算附着层
 scoreboard players operation grab_layer_response int = grab_layer_receiver_response int

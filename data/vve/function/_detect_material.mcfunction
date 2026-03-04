@@ -12,6 +12,7 @@ scoreboard players set shift_response int 0
 scoreboard players set impulse_response int 0
 scoreboard players set friction_response int 10000
 scoreboard players set grab_layer_response int 0
+scoreboard players set bounce_layer_response int 0
 
 # 检测不同介质
 
@@ -57,6 +58,7 @@ scoreboard players operation stemp_v int /= -10000 int
 # 附着层响应
 execute if score grab_depth int <= grab_depth_max int run return run function vve:grab_layer/response
 # 实心层反弹
+scoreboard players set bounce_layer_response int 1
 # 取消附着层响应
 scoreboard players set grab_layer_response int 0
 
