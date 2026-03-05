@@ -13,7 +13,7 @@ item replace entity @e[tag=result,limit=1] container.0 with minecraft:pearlescen
 data modify entity @e[tag=result,limit=1] transformation.scale set value [0.5f,0.5f,0.5f]
 scoreboard players set a int 2500
 scoreboard players set mass int 8
-scoreboard players set inertia int 150
+scoreboard players set inertia int 500
 execute at @e[tag=result,limit=1] rotated 0.0 0.0 as @e[tag=math_marker,limit=1] run function vve:object/_anchor_to
 execute as @e[tag=result,limit=1] run function vve:block/_store
 
