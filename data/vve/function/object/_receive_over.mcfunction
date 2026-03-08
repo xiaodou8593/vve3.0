@@ -9,6 +9,9 @@ scoreboard players operation bounce_layer_response int = bounce_layer_receiver_r
 
 # 结算附着层
 scoreboard players operation grab_layer_response int = grab_layer_receiver_response int
+scoreboard players operation nvec_x int = grab_layer_receiver_nvec_x int
+scoreboard players operation nvec_y int = grab_layer_receiver_nvec_y int
+scoreboard players operation nvec_z int = grab_layer_receiver_nvec_z int
 
 # 结算摩擦
 scoreboard players operation friction_response int = friction_receiver_response int

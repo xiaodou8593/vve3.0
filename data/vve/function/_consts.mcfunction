@@ -14,6 +14,8 @@ scoreboard players set grab_depth_max int 500
 scoreboard players set grab_depth_mid int 125
 # 附着层过滤速度
 scoreboard players set grab_layer_v int 1500
+# 姿态修正速度
+scoreboard players set grab_layer_regular_v int 300
 
 # 重力加速度
 scoreboard players set vve_gravity int 300
