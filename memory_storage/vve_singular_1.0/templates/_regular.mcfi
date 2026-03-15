@@ -1,0 +1,8 @@
+#$(module_prefix)_regular
+# 规整化姿态，消除法向角速度
+# 输入nvec{...}
+# 输入receiver{...}
+# 需要传入世界实体为执行者
+
+function $(module_prefix)_trans_nvec
+function vve:object/_regular

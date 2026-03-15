@@ -1,0 +1,6 @@
+#$(module_prefix)_trans_nvec
+# 变换姿态修正法向量
+
+function math:uvw/_nvec_to
+# 变换{<u,int,1w>,<v,int,1w>,<w,int,1w>}
+function math:uvw/_to_nvec

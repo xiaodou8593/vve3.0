@@ -1,0 +1,7 @@
+#$(module_prefix)set_operation
+# $(module_prefix)_new调用
+
+function $(module_prefix)_get
+function $(module_prefix)_update_display
+
+item replace entity @s container.0 with command_block
