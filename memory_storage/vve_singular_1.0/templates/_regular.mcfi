@@ -4,5 +4,19 @@
 # 输入receiver{...}
 # 需要传入世界实体为执行者
 
-function $(module_prefix)_trans_nvec
-function vve:object/_regular
+function math:uvw/_nvec_to
+scoreboard players set cos int -2147483648
+# 与各面法向量点乘
+scoreboard players operation sstemp_d1 int = nvec_x int
+scoreboard players operation sstemp_d1 int *= 5773 int
+scoreboard players operation sstemp_m int = nvec_y int
+scoreboard players operation sstemp_m int *= 5773 int
+scoreboard players operation sstemp_d1 int += sstemp_m int
+scoreboard players operation sstemp_m int = nvec_z int
+scoreboard players operation sstemp_m int *= 5773 int
+scoreboard players operation sstemp_d1 int += sstemp_m int
+scoreboard players operation sstemp_d1 int /= 10000 int
+scoreboard players operation cos int > sstemp_d1 int
+# 选择贴合面
+execute if score cos int = sstemp_d1 int run function $(module_prefix)regular/surface_1
+function vve:object/_regular_angular
