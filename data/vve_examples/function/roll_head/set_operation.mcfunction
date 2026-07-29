@@ -4,7 +4,7 @@
 function vve_examples:roll_head/_get
 function vve_examples:roll_head/_update_display
 
-item replace entity @s container.0 with minecraft:player_head
+function vve_examples:roll_head/set_head
 
 function vve:id/_pull
 
