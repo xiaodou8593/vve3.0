@@ -38,4 +38,4 @@ scoreboard players set test int -1
 scoreboard players set test_n int 0
 
 # 设置旋转
-#execute as @e[tag=result,limit=1] at @s positioned ~5.0 ~5.0 ~5.0 run function vve:object/_rotate_here_as
+execute as @e[tag=result,limit=1] at @s positioned ~5.0 ~5.0 ~5.0 run function vve:object/_rotate_here_as

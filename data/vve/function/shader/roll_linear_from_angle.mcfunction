@@ -36,7 +36,8 @@ scoreboard players set fakefov_instant_base int -67175168
 #   0 <= psi_normalized < 3600000
 # --------------------------------------------------
 
-scoreboard players operation angle int *= 10000 int
+scoreboard players operation angle int = psi int
+scoreboard players operation angle int *= -1 int
 scoreboard players operation psi_normalized int = angle int
 scoreboard players operation psi_normalized int %= psi_turn int
 
@@ -53,7 +54,7 @@ execute if score psi_normalized int matches ..-1 run scoreboard players operatio
 # --------------------------------------------------
 
 scoreboard players operation psi_scaled int = psi_normalized int
-scoreboard players operation psi_scaled int *= const_256 int
+scoreboard players operation psi_scaled int *= 256 int
 
 scoreboard players operation angle_high int = psi_scaled int
 scoreboard players operation angle_high int /= psi_turn int
@@ -83,7 +84,7 @@ scoreboard players operation psi_remainder int -= psi_high_part int
 # --------------------------------------------------
 
 scoreboard players operation angle_low int = psi_remainder int
-scoreboard players operation angle_low int *= const_256 int
+scoreboard players operation angle_low int *= 256 int
 scoreboard players operation angle_low int += psi_half_turn int
 scoreboard players operation angle_low int /= psi_turn int
 
