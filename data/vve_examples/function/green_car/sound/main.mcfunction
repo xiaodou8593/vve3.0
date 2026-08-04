@@ -18,7 +18,7 @@ execute if score temp_mod int matches 0 if score temp_p int matches 1.. run play
 scoreboard players operation temp_mod int = vve_sound_timer int
 scoreboard players operation temp_mod int %= 6 int
 scoreboard players operation temp_turn int = input_a int
-scoreboard players operation temp_turn int > input_a int
+scoreboard players operation temp_turn int > input_d int
 execute if score temp_mod int matches 3 \
 	if score stemp_v int matches 2000.. \
 	if score input_w int matches 0 \

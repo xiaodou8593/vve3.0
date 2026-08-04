@@ -26,4 +26,4 @@ scoreboard players operation stemp_v int += stemp_0 int
 scoreboard players operation stemp_v int /= 10000 int
 
 # 推进速度
-execute if data storage vve:io shift_points[0] if score stemp_v int < v_max int run function vve:vehicle/engine/gain_velocity
+execute if score shift_cnt_front int matches 1.. if score stemp_v int < v_max int run function vve:vehicle/engine/gain_velocity

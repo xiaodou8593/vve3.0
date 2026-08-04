@@ -1,4 +1,4 @@
-#$(module_prefix)main
+#$(module_prefix)main_c
 # $(module_prefix)tick调用
 # 实体对象主程序
 

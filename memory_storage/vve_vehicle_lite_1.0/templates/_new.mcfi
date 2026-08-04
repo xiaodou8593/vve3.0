@@ -5,6 +5,6 @@
 # 输出 @e[tag=result,limit=1]
 
 tag @e[tag=result] remove result
-summon item_display ~ ~ ~ {Tags:["$(project_name)_$(module_name)","result"],CustomName:"$(project_name)_$(module_name)",teleport_duration:1,interpolation_duration:1,brightness:{sky:15,block:15},Passengers:[{id:"minecraft:interaction",Tags:["$(project_name)_$(module_name)_interaction"]}]}
+summon item_display ~ ~ ~ {Tags:["$(project_name)_$(module_name)","result"],CustomName:"$(project_name)_$(module_name)",item_display:"fixed",teleport_duration:1,interpolation_duration:1,brightness:{sky:15,block:15},Passengers:[{id:"minecraft:interaction",Tags:["$(project_name)_$(module_name)_interaction"]}]}
 execute as @e[tag=result,limit=1] run function $(module_prefix)set
 execute as @e[tag=result,limit=1] run function $(module_prefix)set_operation

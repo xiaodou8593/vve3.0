@@ -2,7 +2,7 @@
 
 tellraw @a "---"
 tellraw @a "frame: (frame)"
-data modify storage vve_examples:io input set from storage vve_examples:io test_frames.(frame)
+data modify storage $(project_name):io input set from storage $(project_name):io test_frames.(frame)
 function $(module_prefix)_new
 execute as @e[tag=result,limit=1] run function marker_control:data/_get
 # 设置销毁函数

@@ -44,6 +44,22 @@ scoreboard players operation impulse_fx int *= -1 int
 scoreboard players operation impulse_fy int *= -1 int
 scoreboard players operation impulse_fz int *= -1 int
 execute if score input_space int matches 0 if score input_d int matches 1 as 0-0-0-0-0 run function vve:object/_apply_impulse
+# 获取前方向
+scoreboard players operation impulse_fx int = kvec_x int
+scoreboard players operation impulse_fy int = kvec_y int
+scoreboard players operation impulse_fz int = kvec_z int
+scoreboard players operation impulse_fx int *= 13 int
+scoreboard players operation impulse_fy int *= 13 int
+scoreboard players operation impulse_fz int *= 13 int
+scoreboard players operation impulse_fx int /= 100 int
+scoreboard players operation impulse_fy int /= 100 int
+scoreboard players operation impulse_fz int /= 100 int
+execute if score input_space int matches 0 if score input_w int matches 1 as 0-0-0-0-0 run function vve:object/_apply_impulse
+# 获取后方向
+scoreboard players operation impulse_fx int *= -1 int
+scoreboard players operation impulse_fy int *= -1 int
+scoreboard players operation impulse_fz int *= -1 int
+execute if score input_space int matches 0 if score input_s int matches 1 as 0-0-0-0-0 run function vve:object/_apply_impulse
 # 水平旋转
 scoreboard players set couple_x int 0
 scoreboard players set couple_y int 1300

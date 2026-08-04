@@ -5,6 +5,7 @@
 # 输出storage vve:io shift_origins
 # 输出storage vve:io not_shift_points
 # 输出storage vve:io not_shift_origins
+# 输出<shift_cnt_front,int>
 # 传入世界实体为执行者(不保证Pos位于执行位置)
 
 # 开始接收介质响应
@@ -61,7 +62,7 @@ scoreboard players operation sstemp_rx int -= sstemp0 int
 scoreboard players operation sstemp_rx int /= 10000 int
 scoreboard players operation sstempy int = sstemp_ry int
 scoreboard players operation sstemp_ry int = sstemp_az int
-scoreboard players operation sstemp_ry int *= sstemp_rx int
+scoreboard players operation sstemp_ry int *= sstempx int
 scoreboard players operation sstemp0 int = sstemp_rz int
 scoreboard players operation sstemp0 int *= sstemp_ax int
 scoreboard players operation sstemp_ry int -= sstemp0 int
@@ -82,7 +83,7 @@ scoreboard players operation sstemp_sx int -= sstemp0 int
 scoreboard players operation sstemp_sx int /= 10000 int
 scoreboard players operation sstempy int = sstemp_sy int
 scoreboard players operation sstemp_sy int = sstemp_az int
-scoreboard players operation sstemp_sy int *= sstemp_sx int
+scoreboard players operation sstemp_sy int *= sstempx int
 scoreboard players operation sstemp0 int = sstemp_sz int
 scoreboard players operation sstemp0 int *= sstemp_ax int
 scoreboard players operation sstemp_sy int -= sstemp0 int
@@ -103,7 +104,7 @@ scoreboard players operation sstemp_tx int -= sstemp0 int
 scoreboard players operation sstemp_tx int /= 10000 int
 scoreboard players operation sstempy int = sstemp_ty int
 scoreboard players operation sstemp_ty int = sstemp_az int
-scoreboard players operation sstemp_ty int *= sstemp_tx int
+scoreboard players operation sstemp_ty int *= sstempx int
 scoreboard players operation sstemp0 int = sstemp_tz int
 scoreboard players operation sstemp0 int *= sstemp_ax int
 scoreboard players operation sstemp_ty int -= sstemp0 int
@@ -247,24 +248,6 @@ execute if score impulse_response int matches 1 run function vve:object/_dec_imp
 scoreboard players operation surface int > surface_response int
 
 # 顶点6介质探测
-scoreboard players operation c_vx int -= sstemp_tx int
-scoreboard players operation c_vy int -= sstemp_ty int
-scoreboard players operation c_vz int -= sstemp_tz int
-execute store result storage math:io xyz[0] double 0.0001 run scoreboard players operation c_x int -= sstemp_kx int
-execute store result storage math:io xyz[1] double 0.0001 run scoreboard players operation c_y int -= sstemp_ky int
-execute store result storage math:io xyz[2] double 0.0001 run scoreboard players operation c_z int -= sstemp_kz int
-#tellraw @a ["vertex 6: ", {"nbt":"xyz","storage":"math:io"}]
-data modify entity @s Pos set from storage math:io xyz
-execute at @s run function vve:_detect_slope
-execute if score bounce_layer_response int matches 1 run function vve:object/_receive_bounce_layer
-execute if score grab_layer_response int matches 1 run function vve:object/_receive_grab_layer
-scoreboard players operation friction_receiver_response int < friction_response int
-execute if score shift_response int matches 1 run function vve:vehicle/_receive_shift
-execute if score shift_response int matches 0 run function vve:vehicle/_receive_not_shift
-execute if score impulse_response int matches 1 run function vve:object/_dec_impulse
-scoreboard players operation surface int > surface_response int
-
-# 顶点7介质探测
 scoreboard players operation c_vx int += sstemp_rx int
 scoreboard players operation c_vy int += sstemp_ry int
 scoreboard players operation c_vz int += sstemp_rz int
@@ -282,13 +265,33 @@ execute if score shift_response int matches 0 run function vve:vehicle/_receive_
 execute if score impulse_response int matches 1 run function vve:object/_dec_impulse
 scoreboard players operation surface int > surface_response int
 
+execute store result score shift_cnt_front int run data get storage vve:io shift_points
+
+# 顶点7介质探测
+scoreboard players operation c_vx int -= sstemp_tx int
+scoreboard players operation c_vy int -= sstemp_ty int
+scoreboard players operation c_vz int -= sstemp_tz int
+execute store result storage math:io xyz[0] double 0.0001 run scoreboard players operation c_x int -= sstemp_kx int
+execute store result storage math:io xyz[1] double 0.0001 run scoreboard players operation c_y int -= sstemp_ky int
+execute store result storage math:io xyz[2] double 0.0001 run scoreboard players operation c_z int -= sstemp_kz int
+#tellraw @a ["vertex 6: ", {"nbt":"xyz","storage":"math:io"}]
+data modify entity @s Pos set from storage math:io xyz
+execute at @s run function vve:_detect_slope
+execute if score bounce_layer_response int matches 1 run function vve:object/_receive_bounce_layer
+execute if score grab_layer_response int matches 1 run function vve:object/_receive_grab_layer
+scoreboard players operation friction_receiver_response int < friction_response int
+execute if score shift_response int matches 1 run function vve:vehicle/_receive_shift
+execute if score shift_response int matches 0 run function vve:vehicle/_receive_not_shift
+execute if score impulse_response int matches 1 run function vve:object/_dec_impulse
+scoreboard players operation surface int > surface_response int
+
 # 顶点8介质探测
-scoreboard players operation c_vx int += sstemp_tx int
-scoreboard players operation c_vy int += sstemp_ty int
-scoreboard players operation c_vz int += sstemp_tz int
-execute store result storage math:io xyz[0] double 0.0001 run scoreboard players operation c_x int += sstemp_kx int
-execute store result storage math:io xyz[1] double 0.0001 run scoreboard players operation c_y int += sstemp_ky int
-execute store result storage math:io xyz[2] double 0.0001 run scoreboard players operation c_z int += sstemp_kz int
+scoreboard players operation c_vx int -= sstemp_rx int
+scoreboard players operation c_vy int -= sstemp_ry int
+scoreboard players operation c_vz int -= sstemp_rz int
+execute store result storage math:io xyz[0] double 0.0001 run scoreboard players operation c_x int -= sstemp_ix int
+execute store result storage math:io xyz[1] double 0.0001 run scoreboard players operation c_y int -= sstemp_iy int
+execute store result storage math:io xyz[2] double 0.0001 run scoreboard players operation c_z int -= sstemp_iz int
 #tellraw @a ["vertex 8: ", {"nbt":"xyz","storage":"math:io"}]
 data modify entity @s Pos set from storage math:io xyz
 execute at @s run function vve:_detect_slope

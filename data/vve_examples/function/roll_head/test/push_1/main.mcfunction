@@ -14,8 +14,8 @@ scoreboard players set @s killtime 10
 #execute if score test_n int matches 5 as @p at @s run function vve_examples:roll_head/_spectate_nearest
 
 function vve_examples:roll_head/main_c
-scoreboard players set inp int 1300
-execute if score test_n int matches 60..92 at @s positioned ~ ~2 ~ rotated -90.0 0.0 run function vve_examples:roll_head/_poke_here_i_as
-execute if score test_n int matches 60..92 as 0-0-0-0-0 run function vve:impulse/_render
+#scoreboard players set inp int 1300
+#execute if score test_n int matches 60..92 at @s positioned ~ ~2 ~ rotated -90.0 0.0 run function vve_examples:roll_head/_poke_here_i_as
+#execute if score test_n int matches 60..92 as 0-0-0-0-0 run function vve:impulse/_render
 
 scoreboard players add test_n int 1

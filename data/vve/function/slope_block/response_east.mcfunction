@@ -4,7 +4,8 @@
 scoreboard players set surface_response int 1
 
 scoreboard players set grab_layer_response int 1
-function vve:slope_block/nvec_east
+#function vve:slope_block/nvec_east
+function vve:slope_block/nvec_up
 
 # 位移至特定深度
 scoreboard players set shift_response int 1
@@ -20,6 +21,7 @@ scoreboard players operation shift_z int /= 10000 int
 scoreboard players operation stemp_0 int = c_y int
 scoreboard players operation stemp_0 int %= 10000 int
 execute unless score stemp_0 int = stemp_y int run function vve:slope_block/shift_up
+function vve:slope_block/nvec_east
 
 # 计算沿法线反方向的速度
 scoreboard players operation stemp_v int = c_vx int

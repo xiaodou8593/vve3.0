@@ -15,6 +15,8 @@ execute if score impulse_response int matches 1 run function vve:object/_apply_i
 execute if score couple_response int matches 1 as 0-0-0-0-0 run function vve:object/_apply_couple
 function vve:object/_apply_friction
 # 姿态角速度修正
+tag @s remove vve_surface
+execute if score grab_layer_response int matches 3.. if score grab_layer_receiver_v_norm int < grab_layer_regular_v int run tag @s add vve_surface
 execute if score grab_layer_response int matches 3.. if score grab_layer_receiver_v_norm int < grab_layer_regular_v int as 0-0-0-0-0 run function vve:object/_regular
 # 计算欧拉角
 execute as 0-0-0-0-0 run function math:uvw/_to_euler

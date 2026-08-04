@@ -10,11 +10,11 @@ execute at @e[tag=math_marker,limit=1] run fill ~-2 ~-1 ~-2 ~2 ~-1 ~2 glass
 data modify storage vve:io input set from storage vve:class cubox_plate
 function vve:cubox/_proj
 execute as @e[tag=math_marker,limit=1] run function vve:test_coord/_topos
-execute at @e[tag=math_marker,limit=1] positioned ~ ~4 ~ rotated 0.0 0.0 as @e[tag=math_marker,limit=1] run function vve:object/_anchor_to
+execute at @e[tag=math_marker,limit=1] positioned ~ ~3.5 ~ rotated 0.0 0.0 as @e[tag=math_marker,limit=1] run function vve:object/_anchor_to
 function vve:cubox/_model
 data modify storage vve:io input set from storage vve:io result
 execute as @e[tag=math_marker,limit=1] run function vve:test_coord/_topos
-execute at @e[tag=math_marker,limit=1] positioned ~ ~4 ~ run function vve:cubox/_new
+execute at @e[tag=math_marker,limit=1] positioned ~ ~3.5 ~ run function vve:cubox/_new
 execute as @e[tag=result,limit=1] on passengers run item replace entity @s container.0 with minecraft:sea_lantern
 #tag @e[tag=result,limit=1] remove vve_impulse_receiver
 
