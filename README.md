@@ -47,9 +47,9 @@ VVE 3 实现了对性能的精准把控，最多可以支持上百个物体实�
 
 | 类型 | 项目 | 版本要求 | 说明 |
 | --- | --- | --- | --- |
-| 前置数据包 | [数学库](https://github.com/xiaodou8593/math3.1) | 3.1.2+ | 必需 |
-| 前置数据包 | [线性代数库](https://github.com/xiaodou8593/math3.1_lalib) | 3.1.2+ | 必需 |
-| 前置数据包 | [图形库](https://github.com/xiaodou8593/math3.1_gelib) | 3.1.2+ | 可选，用于可视化测试 |
+| 前置数据包 | [数学库](https://github.com/xiaodou8593/math3.1) | 3.1.4+ | 必需 |
+| 前置数据包 | [线性代数库](https://github.com/xiaodou8593/math3.1_lalib) | 3.1.4+ | 必需 |
+| 前置数据包 | [图形库](https://github.com/xiaodou8593/math3.1_gelib) | 3.1.4+ | 可选，用于可视化测试 |
 | 模块构建器 | [MOT](https://github.com/xiaodou8593/mot_2.0) | 2.0.0+ | 必需 |
 
 请手动初始化所有数据包：
@@ -73,15 +73,15 @@ function math:particles/_load_1214
 
 ```mcfunction
 function math:_version
-execute unless score version int matches 312.. run return run tellraw @a {"text":"[vve3]: 依赖错误，请安装math3.1.2及以上版本！","color":"red","click_event":{"action":"open_url","url":"https://github.com/xiaodou8593/math3.1"}}
+execute unless score version int matches 314.. run return run tellraw @a {"text":"[vve3]: 依赖错误，请安装math3.1.4及以上版本！","color":"red","click_event":{"action":"open_url","url":"https://github.com/xiaodou8593/math3.1"}}
 execute unless score math_init_version int = version int run function math:_init
 
 function math:_version_la
-execute unless score version_la int matches 312.. run return run tellraw @a {"text":"[vve3]: 依赖错误，请安装math3.1.2_lalib及以上版本！","color":"red","click_event":{"action":"open_url","url":"https://github.com/xiaodou8593/math3.1_lalib"}}
+execute unless score version_la int matches 314.. run return run tellraw @a {"text":"[vve3]: 依赖错误，请安装math3.1.4_lalib及以上版本！","color":"red","click_event":{"action":"open_url","url":"https://github.com/xiaodou8593/math3.1_lalib"}}
 execute unless score math_la_init_version int = version_la int run function math:_init_la
 
 function vve:_version
-execute unless score version_vve int matches 301.. run return run tellraw @a {"text":"[vve3]: 版本错误，请安装vve3.0.1及以上版本！","color":"red","click_event":{"action":"open_url","url":"https://github.com/xiaodou8593/vve3.0"}}
+execute unless score version_vve int matches 303.. run return run tellraw @a {"text":"[vve3]: 版本错误，请安装vve3.0.3及以上版本！","color":"red","click_event":{"action":"open_url","url":"https://github.com/xiaodou8593/vve3.0"}}
 execute unless score vve_init_version int = version_vve int run function vve:_init
 ```
 
@@ -89,7 +89,7 @@ execute unless score vve_init_version int = version_vve int run function vve:_in
 
 ```mcfunction
 function math:_version_ge
-execute unless score version_ge int matches 312.. run return run tellraw @a {"text":"[vve3]: 依赖错误，请安装math3.1.2_gelib及以上版本！","color":"red","click_event":{"action":"open_url","url":"https://github.com/xiaodou8593/math3.1_gelib"}}
+execute unless score version_ge int matches 314.. run return run tellraw @a {"text":"[vve3]: 依赖错误，请安装math3.1.4_gelib及以上版本！","color":"red","click_event":{"action":"open_url","url":"https://github.com/xiaodou8593/math3.1_gelib"}}
 execute unless score math_ge_init_version int = version_ge int run function math:_init_ge
 function math:particles/_load_1214
 ```

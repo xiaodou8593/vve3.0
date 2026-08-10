@@ -4,17 +4,17 @@
 
 execute store result score a int run data get storage vve:io input.a 10000
 execute store result score mass int run data get storage vve:io input.mass
-execute store result score inertia int run data get storage vve:io input.inertia 10000
+execute store result score inertia int run data get storage vve:io input.inertia 100
 execute store result score x int run data get storage vve:io input.center[0] 10000
 execute store result score y int run data get storage vve:io input.center[1] 10000
 execute store result score z int run data get storage vve:io input.center[2] 10000
 execute store result score vx int run data get storage vve:io input.velocity[0] 10000
 execute store result score vy int run data get storage vve:io input.velocity[1] 10000
 execute store result score vz int run data get storage vve:io input.velocity[2] 10000
-execute store result score angular_x int run data get storage vve:io input.angular_vec[0] 10000
-execute store result score angular_y int run data get storage vve:io input.angular_vec[1] 10000
-execute store result score angular_z int run data get storage vve:io input.angular_vec[2] 10000
-execute store result score angular_len int run data get storage vve:io input.angular_len 10000
+execute store result score angular_x int run data get storage vve:io input.angular_vec[0] 1000000
+execute store result score angular_y int run data get storage vve:io input.angular_vec[1] 1000000
+execute store result score angular_z int run data get storage vve:io input.angular_vec[2] 1000000
+execute store result score angular_len int run data get storage vve:io input.angular_len 1000000
 execute store result score ivec_x int run data get storage vve:io input.ivec[0] 10000
 execute store result score ivec_y int run data get storage vve:io input.ivec[1] 10000
 execute store result score ivec_z int run data get storage vve:io input.ivec[2] 10000

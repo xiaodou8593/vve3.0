@@ -1,0 +1,15 @@
+#vve:spin/doc.mcfo
+
+# spin临时对象
+_this:{
+	spin_point:{
+		<spin_x,int,1w>,
+		<spin_y,int,1w>,
+		<spin_z,int,1w>
+	},
+	couple:{
+		<couple_x,int,1w>,
+		<couple_y,int,1w>,
+		<couple_z,int,1w>
+	}
+}
