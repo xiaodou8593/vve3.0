@@ -1,0 +1,18 @@
+#vve:euler_control/doc.mcfo
+
+# euler_control临时对象
+_this:{
+	control_active:<control_active,int>,
+	damp_params:{
+		<vve_euler_k,int>,
+		<vve_euler_b,int>,
+		<vve_euler_f,int>,
+		<vve_euler_max,int>,
+		<vve_euler_vmax,int>
+	},
+	target_euler:{
+		<target_theta,int,1w>,
+		<target_phi,int,1w>,
+		<target_psi,int,1w>
+	}
+}

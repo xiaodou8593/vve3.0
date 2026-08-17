@@ -1,8 +1,10 @@
-#vve:object/_apply_spin
+#vve:box_object/_apply_spin
 # 施加spin
-# 输入<inertia,int,100>
 # 输入vve:spin{...}
 # 传入世界实体为执行者
+
+# 更新角速度
+function vve:box_object/_apply_couple
 
 scoreboard players operation vec_x int = couple_x int
 scoreboard players operation vec_y int = couple_y int
@@ -78,6 +80,3 @@ scoreboard players operation fvec_z int -= spin_z int
 scoreboard players operation vx int += fvec_x int
 scoreboard players operation vy int += fvec_y int
 scoreboard players operation vz int += fvec_z int
-
-# 更新角速度
-function vve:object/_apply_couple

@@ -1,0 +1,9 @@
+#$(module_prefix)euler_control/damp_iter_branch_1
+# $(module_prefix)euler_control/damp_iter调用
+
+scoreboard players operation sstemp_1 int = sstemp_0 int
+scoreboard players operation sstemp_1 int /= vve_euler_vmax int
+scoreboard players operation res int -= sstemp_0 int
+scoreboard players operation res int *= 5 int
+scoreboard players operation res int /= vve_euler_vmax int
+scoreboard players operation res int += sstemp_1 int

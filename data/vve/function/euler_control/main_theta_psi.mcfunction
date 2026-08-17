@@ -1,0 +1,82 @@
+#vve:euler_control/main_theta_psi
+# 横滚角控制主程序
+# 输入vve:object{...}
+# 输出vve:couple{...}
+# 需要传入世界实体为执行者
+
+function math:uvw/_to_euler
+execute if score target_theta int matches -2147483647.. run scoreboard players operation theta int = target_theta int
+execute if score target_psi int matches -2147483647.. run scoreboard players operation psi int = target_psi int
+function math:euler/_to_iquat
+
+# 计算转轴和角度差
+scoreboard players operation quat_x int *= -1 int
+scoreboard players operation quat_y int *= -1 int
+scoreboard players operation quat_z int *= -1 int
+function math:quat/_mult
+scoreboard players operation quat_x int *= -1 int
+scoreboard players operation quat_y int *= -1 int
+scoreboard players operation quat_z int *= -1 int
+execute if score rquat_w int matches ..-1 run function math:rquat/_neg
+function math:rquat/_touvec
+scoreboard players operation res int *= -2 int
+scoreboard players add res int 10000
+scoreboard players operation cos int = res int
+function math:_arccos_res
+scoreboard players operation res int *= -1 int
+
+# 剔除ivec方向控制
+scoreboard players operation sstemp_x int = uvec_x int
+scoreboard players operation sstemp_y int = uvec_y int
+scoreboard players operation sstemp_z int = uvec_z int
+scoreboard players operation sstemp_x int *= ivec_x int
+scoreboard players operation sstemp_y int *= ivec_y int
+scoreboard players operation sstemp_z int *= ivec_z int
+scoreboard players operation sstemp_x int += sstemp_y int
+scoreboard players operation sstemp_x int += sstemp_z int
+execute store result score sstemp_y int store result score sstemp_z int run scoreboard players operation sstemp_x int /= 10000 int
+scoreboard players operation sstemp_x int *= ivec_x int
+scoreboard players operation sstemp_y int *= ivec_y int
+scoreboard players operation sstemp_z int *= ivec_z int
+scoreboard players operation sstemp_x int /= 10000 int
+scoreboard players operation sstemp_y int /= 10000 int
+scoreboard players operation sstemp_z int /= 10000 int
+execute store result storage math:io xyz[0] double 0.0001 run scoreboard players operation uvec_x int -= sstemp_x int
+execute store result storage math:io xyz[1] double 0.0001 run scoreboard players operation uvec_y int -= sstemp_y int
+execute store result storage math:io xyz[2] double 0.0001 run scoreboard players operation uvec_z int -= sstemp_z int
+data modify entity @s Pos set from storage math:io xyz
+execute positioned 0.0 0.0 0.0 facing entity @s feet run tp @s ^ ^ ^1.0
+data modify storage math:io xyz set from entity @s Pos
+execute store result score uvec_x int run data get storage math:io xyz[0] 10000
+execute store result score uvec_y int run data get storage math:io xyz[1] 10000
+execute store result score uvec_z int run data get storage math:io xyz[2] 10000
+
+# 计算当前角速度沿转轴分量
+scoreboard players operation sstemp_v int = angular_x int
+scoreboard players operation sstemp_v int /= 100 int
+scoreboard players operation sstemp_v int *= uvec_x int
+scoreboard players operation sstemp_0 int = angular_y int
+scoreboard players operation sstemp_0 int /= 100 int
+scoreboard players operation sstemp_0 int *= uvec_y int
+scoreboard players operation sstemp_v int += sstemp_0 int
+scoreboard players operation sstemp_0 int = angular_z int
+scoreboard players operation sstemp_0 int /= 100 int
+scoreboard players operation sstemp_0 int *= uvec_z int
+scoreboard players operation sstemp_v int += sstemp_0 int
+scoreboard players operation sstemp_v int /= 10000 int
+
+scoreboard players operation sstemp_v0 int = sstemp_v int
+function vve:euler_control/damp_iter
+
+scoreboard players operation sstemp_v int -= sstemp_v0 int
+scoreboard players operation couple_x int = uvec_x int
+scoreboard players operation couple_y int = uvec_y int
+scoreboard players operation couple_z int = uvec_z int
+scoreboard players operation couple_x int *= sstemp_v int
+scoreboard players operation couple_y int *= sstemp_v int
+scoreboard players operation couple_z int *= sstemp_v int
+scoreboard players operation couple_x int /= 10000 int
+scoreboard players operation couple_y int /= 10000 int
+scoreboard players operation couple_z int /= 10000 int
+
+scoreboard players set control_active int 0
