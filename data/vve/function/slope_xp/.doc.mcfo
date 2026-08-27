@@ -1,0 +1,26 @@
+#vve:slope_xp/doc.mcfo
+
+# slope_xp临时对象
+_this:{
+	coord:{
+		<x,int,1w>,
+		<y,int,1w>,
+		<z,int,1w>
+	},
+	chunk_range:{
+		<chunk_x_min,int>,
+		<chunk_z_min,int>,
+		<chunk_x_max,int>,
+		<chunk_z_max,int>
+	},
+	size:{
+		<w,int,1w>,
+		<l,int,1w>,
+		<h,int,1w>
+	},
+	nvec:{
+		<nvec_x,int,1w>,
+		<nvec_y,int,1w>,
+		<nvec_z,int,1w>
+	}
+}

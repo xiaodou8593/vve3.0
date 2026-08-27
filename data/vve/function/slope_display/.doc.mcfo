@@ -1,0 +1,16 @@
+#vve:slope_display/doc.mcfo
+
+# slope_display临时对象
+_this:{
+	center:{
+		<x,int,1w>,
+		<y,int,1w>,
+		<z,int,1w>
+	},
+	size:{
+		<w,int,1w>,
+		<l,int,1w>,
+		<h,int,1w>
+	},
+	theta:<theta,int,1w>
+}

@@ -1,0 +1,7 @@
+#vve:chunk_coord/doc.mcfo
+
+# chunk_coord临时对象
+_this:{
+	<chunk_x,int>,
+	<chunk_z,int>
+}
