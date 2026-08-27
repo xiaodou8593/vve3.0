@@ -1,0 +1,29 @@
+{
+	"condition":"value_check",
+	"value":{
+		"type":"score",
+		"target":{
+			"type":"context",
+			"target":"this"
+		},
+		"score":"vve_id"
+	},
+	"range":{
+		"min":{
+			"type":"score",
+			"target":{
+				"type":"fixed",
+				"name":"tempid"
+			},
+			"score":"int"
+		},
+		"max":{
+			"type":"score",
+			"target":{
+				"type":"fixed",
+				"name":"tempid"
+			},
+			"score":"int"
+		}
+	}
+}
