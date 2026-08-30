@@ -11,6 +11,7 @@ execute store result score @s chunk_z_max run data get storage vve:io input.chun
 execute store result score @s w run data get storage vve:io input.size[0] 10000
 execute store result score @s l run data get storage vve:io input.size[1] 10000
 execute store result score @s h run data get storage vve:io input.size[2] 10000
+execute store result score @s base_layer run data get storage vve:io input.base_layer 10000
 execute store result score @s nvec_x run data get storage vve:io input.nvec[0] 10000
 execute store result score @s nvec_y run data get storage vve:io input.nvec[1] 10000
 execute store result score @s nvec_z run data get storage vve:io input.nvec[2] 10000

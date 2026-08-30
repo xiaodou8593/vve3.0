@@ -1,6 +1,7 @@
 #vve:slope_block/response_north
 # vve:slope_block/detect_north调用
 
+scoreboard players operation grab_depth int = stemp_depth int
 scoreboard players set surface_response int 1
 
 scoreboard players set grab_layer_response int 1

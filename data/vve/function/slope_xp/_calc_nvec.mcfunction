@@ -4,7 +4,7 @@
 
 data modify storage math:io xyz set value [0.0d,0.0d,0.0d]
 execute store result storage math:io xyz[1] double 0.0001 run scoreboard players get l int
-execute store result storage math:io xyz[2] double -0.0001 run scoreboard players get h int
+execute store result storage math:io xyz[0] double -0.0001 run scoreboard players get h int
 data modify entity @s Pos set from storage math:io xyz
 execute positioned 0.0 0.0 0.0 facing entity @s feet run tp @s ^ ^ ^1.0
 data modify storage math:io xyz set from entity @s Pos

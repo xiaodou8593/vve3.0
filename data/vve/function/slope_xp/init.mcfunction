@@ -17,6 +17,7 @@ scoreboard objectives add chunk_z_max dummy
 scoreboard objectives add w dummy
 scoreboard objectives add l dummy
 scoreboard objectives add h dummy
+scoreboard objectives add base_layer dummy
 scoreboard objectives add nvec_x dummy
 scoreboard objectives add nvec_y dummy
 scoreboard objectives add nvec_z dummy

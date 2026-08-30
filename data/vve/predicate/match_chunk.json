@@ -1,0 +1,10 @@
+{
+	"condition":"entity_scores",
+	"entity":"this",
+	"scores":{
+		"chunk_x_min":{"max":{"type":"score","target":{"type":"fixed","name":"chunk_x"},"score":"int"},"min":-2147483648},
+		"chunk_x_max":{"min":{"type":"score","target":{"type":"fixed","name":"chunk_x"},"score":"int"},"max":2147483647},
+		"chunk_z_min":{"max":{"type":"score","target":{"type":"fixed","name":"chunk_z"},"score":"int"},"min":-2147483648},
+		"chunk_z_max":{"min":{"type":"score","target":{"type":"fixed","name":"chunk_z"},"score":"int"},"max":2147483647}
+	}
+}

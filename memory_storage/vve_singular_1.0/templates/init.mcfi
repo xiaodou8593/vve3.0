@@ -8,3 +8,5 @@ $create $(score _entity and not global_default)
 function $(module_prefix)_consts
 
 function $(module_prefix)_class
+
+function $(module_prefix)init_operation

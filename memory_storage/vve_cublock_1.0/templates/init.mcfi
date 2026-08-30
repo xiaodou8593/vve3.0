@@ -1,15 +1,6 @@
 #$(module_prefix)init
 # 初始化$(module_name)模块
 
-# 初始化模块控制
-scoreboard objectives add int dummy
-execute unless score module_control_inited int matches 1 run function module_control:_init
-
-# 注册本模块
-data modify storage module_control:io input set value {prefix:"$(module_prefix)",namespace:"$(project_name)"}
-function module_control:data/_reg
-scoreboard players operation #$(module_prefix) module_id = res int
-
 $init $(nbt _this and not global_default)
 
 $create $(score _entity and not global_default)
@@ -17,3 +8,5 @@ $create $(score _entity and not global_default)
 function $(module_prefix)_consts
 
 function $(module_prefix)_class
+
+function $(module_prefix)init_operation

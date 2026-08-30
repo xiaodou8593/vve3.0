@@ -1,4 +1,4 @@
 #$(module_prefix)init
-# 初始化介质响应$(module_name)
+# 初始化$(module_name)模块
 
 scoreboard players set $(module_name)_response int 0

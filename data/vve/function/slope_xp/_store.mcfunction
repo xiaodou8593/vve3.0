@@ -12,6 +12,7 @@ scoreboard players operation @s chunk_z_max = chunk_z_max int
 scoreboard players operation @s w = w int
 scoreboard players operation @s l = l int
 scoreboard players operation @s h = h int
+scoreboard players operation @s base_layer = base_layer int
 scoreboard players operation @s nvec_x = nvec_x int
 scoreboard players operation @s nvec_y = nvec_y int
 scoreboard players operation @s nvec_z = nvec_z int

@@ -1,6 +1,12 @@
 #vve:_init
 # 初始化vve3.0
 
+# 初始化模块控制
+function module_control:_init
+
+# 栈帧
+data modify storage vve:io rec set value [{}]
+
 # 创建记分板
 scoreboard objectives add vve_material_type dummy
 scoreboard objectives add vve_id dummy
@@ -39,9 +45,11 @@ function vve:vehicle/init
 function vve:id/init
 function vve:test_auto/init
 function vve:sound/init
-
-# 初始化模块控制
-function module_control:_init
+function vve:slope_display/init
+function vve:slope_xp/init
+function vve:slope_xn/init
+function vve:slope_zp/init
+function vve:slope_zn/init
 
 # 初始化记录
 function vve:_version
